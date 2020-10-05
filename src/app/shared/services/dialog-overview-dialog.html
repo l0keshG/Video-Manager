@@ -1,0 +1,140 @@
+
+<table class =".view-rates" *ngIf="data['origin']=='viewRates'">
+
+<tr>
+  <th style="width: 15%; text-align:center">Item Name</th>
+  <th style="width: 15%; text-align:center">Description</th>
+  <th style="width: 15%; text-align:center">Units</th>
+  <th style="width: 15%; text-align:center">Quantity</th>
+  <th style="width: 15%; text-align:center">Unit Price</th>
+  <th style="width: 15%; text-align:center">Total</th>
+</tr>
+
+
+<tr *ngFor="let row of data['resRows']" >
+
+          <td style="text-align: center;">{{row.item_name}}</td>
+          <td style="text-align: center;">{{row.description}}</td>
+          <td style="text-align: center;">{{row.unit}}</td>
+          <td style="width: 10%; text-align: center;">{{row.quantity}}</td>
+          <td style="width: 10%; text-align: center;">{{row.unit_price}}</td>
+          <td style="width: 10%; text-align: center;">{{row.total}}</td>
+        </tr>
+
+</table>
+
+
+<p *ngIf="data['origin']=='SITE'" style="font-size: 15px;color:Red">"Error Records:"</p>
+<table *ngIf="data['origin']=='SITE'">
+
+  <tr>
+    <th style="width: 15%; text-align:center">SITE ID</th>
+    <th style="width: 15%; text-align:center">SITE VERSION</th>
+    <th style="width: 15%; text-align:center">SITE ACTIVITY</th>
+    <th style="width: 15%; text-align:center">ERROR MESSAGE</th>
+
+  </tr>
+
+
+  <tr *ngFor="let row of data['resRows']" >
+
+            <td style="text-align: center;">{{row.site_id}}</td>
+            <td style="text-align: center;">{{row.site_version}}</td>
+            <td style="text-align: center;">{{row.site_activity}}</td>
+            <td style="width: 10%;">{{row.message}}</td>
+
+          </tr>
+
+  </table>
+
+
+  <table *ngIf="data['origin']=='SPO'">
+
+    <tr>
+      <th style="width: 15%; text-align:left; font-size: 15px; color:red"> Error Message</th>
+    </tr>
+    <tr>
+       <td style="font-size: 15px;width: 15%; text-align:left; font-size: 15px;">{{data['resRows']}}</td>
+    </tr>
+
+    </table>
+
+    <p *ngIf="data['origin']=='SMP'" style="font-size: 15px;color:Red">"Error Records:"</p>
+    <table *ngIf="data['origin']=='SMP'">
+
+      <tr>
+        <th style="width: 15%; text-align:center">SITE ID</th>
+        <th style="width: 15%; text-align:center">SITE VERSION</th>
+        <th style="width: 15%; text-align:center">SITE ACTIVITY</th>
+        <th style="width: 15%; text-align:center">ERROR MESSAGE</th>
+
+      </tr>
+
+
+      <tr *ngFor="let row of data['resRows']" >
+
+                <td style="text-align: center;">{{row.site_id}}</td>
+                <td style="text-align: center;">{{row.site_version}}</td>
+                <td style="text-align: center;">{{row.site_activity}}</td>
+                <td style="width: 10%;">{{row.message}}</td>
+
+      </tr>
+
+      </table>
+      <p *ngIf="data['origin']=='FAC'" style="font-size: 15px;color:Red">"Error Records:"</p>
+      <table *ngIf="data['origin']=='FAC'">
+
+        <tr>
+          <th style="width: 15%; text-align:center">SITE ID</th>
+          <th style="width: 15%; text-align:center">SITE VERSION</th>
+          <th style="width: 15%; text-align:center">SITE ACTIVITY</th>
+          <th style="width: 15%; text-align:center">ERROR MESSAGE</th>
+
+        </tr>
+
+
+        <tr *ngFor="let row of data['resRows']" >
+
+                  <td style="text-align: center;">{{row.site_id}}</td>
+                  <td style="text-align: center;">{{row.site_version}}</td>
+                  <td style="text-align: center;">{{row.site_activity}}</td>
+                  <td style="width: 10%;">{{row.message}}</td>
+
+                </tr>
+        </table>
+
+<p *ngIf="data['origin']=='viewRatesError'" style="font-size: 15px;">
+  Error: Failed to Display View Rates</p>
+
+  <p *ngIf="data['origin']=='viewAllWarning'" style="font-size: 15px;">
+    <b style="color: rgba(0, 4, 255, 0.527)">Alert:</b> Selection of Sites in different statuses is not Allowed. If you wish to
+  select site(s) which are in other status, please uncheck the current selection.</p>
+
+  <p *ngIf="data['origin']=='serverError'" style="font-size: 15px;">
+    <b>Error:</b> Unable to fetch the data. Please try again</p>
+
+<p *ngIf="data['origin']=='EmailQuoation'" style="font-size: 15px;color:Red">"Error Records:"</p>
+<table *ngIf="data['origin']=='EmailQuoation'">
+
+  <tr>
+    <th style="width: 15%; text-align:center">Subco Name</th>
+    <th style="width: 15%; text-align:center">ERROR MESSAGE</th>
+
+  </tr>
+
+
+  <tr *ngFor="let row of data['resRows']" >
+
+            <td style="text-align: center;">{{row.name}}</td>
+            <td style="width: 10%;">{{row.message}}</td>
+
+          </tr>
+  </table>
+
+  <p *ngIf="data['origin'] == 'NoAccess'" style="font-size: 15px;color:Red">User has no access to application. Please contact administrator</p>
+
+  <p *ngIf="data['origin'] == 'NA'" style="font-size: 15px;color:Red">Application is not available.Please try again</p>
+
+
+
+

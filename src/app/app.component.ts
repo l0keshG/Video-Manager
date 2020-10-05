@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'video-manager';
+  title = 'Video Manager';
+  
+  public customSpinner = LoadingSpinnerComponent;
+
 }

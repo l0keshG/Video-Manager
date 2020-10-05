@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<mat-toolbar class="menu-bar" color="primary">
+  <mat-toolbar-row>
+    <div fxLayout="row" fxFlex fxLayoutAlign="start center">
+      <img class="logo-width" src="assets/images/nokia_logo_white.png" />
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="mat-margin-8">
+          <mat-label class="mat-body-1" style="margin-left: 16px;font-size:16px;">{{ getUserName() }}</mat-label>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="mat-margin-8;font-size:16px">
+      <button mat-flat-button (click)="logout()" >Logout</button>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+</body>
