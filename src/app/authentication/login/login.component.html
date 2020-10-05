@@ -2,10 +2,10 @@
     <mat-card id="authDialog" fxLayout="column" style="padding: 16px;padding-top: 0" class="mat-elevation-z2">
         <form [formGroup]="loginFormGroup" fxLayout="column" novalidate style="min-width: 250px" autocomplete="off">
             <div fxLayout="row" fxLayoutAlign="start center">
-                <img class="formControl" src="assets/images/nsn_logo_100x44.png" />
+                <img class="formControl" src="assets/images/mark_billa.jpg" />
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
-                <h2>Cotton Business :)</h2>
+                <h4>Cotton Business :)</h4>
             </div>
             <div fxLayout="column" title="User Name">
                 <mat-label>User Name</mat-label>
@@ -26,8 +26,11 @@
             <div fxLayout="row" fxFlex style="margin-top:20px;padding-bottom: 5px;" fxLayoutAlign="center center">
                 <button mat-raised-button fxFlex color="primary" type="submit" (click)="login()">LOGIN</button>
             </div>
-            <div fxLayout="row" fxFlex style="margin-top:20px;padding-bottom: 5px;" fxLayoutAlign="center center">
+            <div fxLayout="row" fxFlex style="margin-top:5px;padding-bottom: 5px;" fxLayoutAlign="center center">
                 <p>If you are new user, click <b style="color: blue;cursor: pointer;" [routerLink]="['**']">here </b> to register</p>
+            </div>
+            <div fxLayout="row" fxFlex style="margin-top:5px;padding-bottom: 5px;" fxLayoutAlign="center center">
+                <p>copy rights@Mark Billa</p>
             </div>
         </form>
 
