@@ -70,14 +70,14 @@ export class AuthService {
       .subscribe(
         resp => {
           if (resp === true) {
-            this.router.navigate([""]);
+            this.router.navigate(["/login"]);
 
           } else {
-            this.router.navigate(["/"]);
+            this.router.navigate(["/login"]);
           }
         },
         () => {
-          this.router.navigate(["/"]);
+          this.router.navigate(["/login"]);
         }
       );
   }

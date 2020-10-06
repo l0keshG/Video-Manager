@@ -1,0 +1,21 @@
+<div fxLayout="column" class="mat-margin-8">
+    <div fxLayout="row">
+        <mat-label class="tileLeft" style="margin-top:3%">Browse File:</mat-label>
+        <div fxFlex="60" style="margin-top:2%;margin-left: 3%;">
+          <input type="file" #fileInput id="fileUpload" onclick="this.value=null" name="fileUpload" 
+            accept="xlsx" style="display: none;" />
+          <button class="tileRight" mat-raised-button color="primary" (click)="onClick()">
+            <mat-icon>search</mat-icon>Browse
+          </button>
+          <mat-label class="clsFileSelection">{{fileName}} </mat-label>
+          <button class="tileRight" mat-raised-button color="primary" (click)="onFileUpload()" >
+            <mat-icon>file_upload</mat-icon>Upload
+          </button>
+          <button class="tileRight" mat-raised-button color="warn" (click)="resetUpload()"  style="background-color: cadetblue;">
+            Reset
+          </button>
+        </div>
+        
+    </div>
+
+</div>

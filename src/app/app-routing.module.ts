@@ -4,16 +4,25 @@ import { AuthGuard } from "./authentication/service/auth.guard";
 import { LoginComponent } from './authentication/login/login.component';
 import { LayoutComponent } from "./shared/components/layout/layout.component";
 import { PageNotFoundComponent } from "./shared/components/page.not.found.component";
+import { viewClassName } from '@angular/compiler';
 
 
 const routes: Routes = [
   {
-    path: "", component: LoginComponent 
+    path: "login", component: LoginComponent 
   },
   {
-    path: "homepage",
+    path: "",
     component: LayoutComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "core",
+        loadChildren: () =>
+          import("./core/modules/core.module").then(
+            (t) => t.CoreModule
+          )
+      }]
   },
   {
     path: "**",

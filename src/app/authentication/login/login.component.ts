@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       user.userId = this.userName.value;
       user.password = this.password.value;
       this.authService.login(user)
-        .subscribe(res => this.router.navigate(["homepage"]));
+        .subscribe(res => this.router.navigate([""]));
     }
   }
 }

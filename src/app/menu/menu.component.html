@@ -11,9 +11,6 @@
     <div fxLayout="row" fxFlex fxLayoutAlign="start center">
       <img class="logo-width" src="assets/images/mark_billa.jpg" />
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" class="mat-margin-8">
-      <mat-label class="mat-body-1" style="margin-left: 16px;font-size:16px;cursor: pointer;" [routerLink]="['**']">Click here to upload video</mat-label>
-    </div>
     <div fxLayout="row" fxLayoutAlign="end center" class="mat-margin-8">
           <mat-label class="mat-body-1" style="margin-left: 16px;font-size:16px;">{{ getUserName() }}</mat-label>
     </div>
@@ -21,6 +18,21 @@
       <button mat-flat-button (click)="logout()" >Logout</button>
     </div>
 
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <div
+      fxLayout="row"
+      fxFlex
+      fxLayoutAlign="space-around left"
+      style="margin-left: 16px;"
+    >
+    <button mat-icon-button [routerLink]="['/core/upload-video']">
+      Upload Video
+    </button>
+    <button mat-icon-button [routerLink]="['/core/view-video']">
+      View Video
+    </button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 </body>
