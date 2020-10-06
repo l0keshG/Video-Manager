@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { SpinnerVisibilityService } from 'ng-http-loader';
+import { UploadService } from '../services/upload.service';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +10,7 @@ import { SpinnerVisibilityService } from 'ng-http-loader';
 export class UploadComponent implements OnInit {
 @ViewChild("fileInput") fileInput: ElementRef;
 
-  constructor(private spinner: SpinnerVisibilityService) {}
+  constructor(private spinner: SpinnerVisibilityService, private upload: UploadService) {}
   fileName:string="";
   fileToUpload: File = null;
   ngOnInit(): void {
@@ -27,7 +28,14 @@ export class UploadComponent implements OnInit {
   }
 
   onFileUpload() {
-    console.log("upload file")
+    console.log("uploading file")
+    this.upload.upload_newVideo(this.fileToUpload).subscribe((res) => {
+      console.log('file uploaded successfully')
+    },
+      (error) => {
+       console.log('issue with uploading file')
+
+      });
   }
 
   resetUpload(){
